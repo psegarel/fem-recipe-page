@@ -1,0 +1,71 @@
+:root {
+  --stone-100: #f3e5d7;
+  --stone-150: #e3ddd7;
+  --stone-600: #5f564d;
+  --stone-900: #312e2c;
+  --rose-50: #fff7fb;
+  --rose-800: #78284e;
+  --brown-800: #854632;
+  --padding-one: 40px;
+  --spacing-one: 40px;
+  --spacing-two: 32px;
+  --spacing-three: 24px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--stone-100);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-one);
+  margin: 128px auto;
+  padding: var(--padding-one);
+  width: 736px;
+  height: 1700px;
+  background-color: white;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-two);
+}
+.nutrition {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-three);
+}
+.nutrition-table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.nutrition-item {
+  display: flex;
+  flex-direction: row;
+  padding: 16px 32px;
+  border-bottom: var(--stone-150) dotted 1px;
+}
+.nutrition-item p {
+  display: block;
+  width: 100%;
+}
+.nutrition-item p:last-child {
+  font-weight: bold;
+}
+
+.attribution {
+  position: absolute;
+  right: 3%;
+  top: 3%;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
