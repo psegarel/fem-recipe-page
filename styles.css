@@ -2,6 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
 :root {
+  /* Typography Scale */
+  --font-size-sm: 16px;
+  --font-size-md: 20px;
+  --font-size-lg: 28px;
+  --font-size-xl: 40px;
+
   --stone-100: #f3e5d7;
   --stone-150: #e3ddd7;
   --stone-600: #5f564d;
@@ -10,11 +16,79 @@
   --rose-800: #78284e;
   --brown-800: #854632;
   --padding-one: 40px;
+  --padding-two: 24px;
   --spacing-one: 40px;
   --spacing-two: 32px;
   --spacing-three: 24px;
   --spacing-four: 16px;
 }
+
+.padding-one {
+  padding: var(--padding-one);
+}
+.padding-two {
+  padding: var(--padding-two);
+}
+
+.rose-800 {
+  color: var(--rose-800);
+}
+.stone-600 {
+  color: var(--stone-600);
+}
+.bg-rose-50 {
+  background-color: var(--rose-50);
+}
+.brown-800 {
+  color: var(--brown-800);
+}
+
+.text-preset-1 {
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-size: var(--font-size-xl);
+  color: var(--stone-900);
+}
+
+.text-preset-2 {
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-size: var(--font-size-lg);
+}
+.text-preset-3 {
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 100%;
+  letter-spacing: 0px;
+  font-size: var(--font-size-md);
+}
+.text-preset-4 {
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: 0px;
+  font-size: var(--font-size-sm);
+}
+.text-preset-4-bold {
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 150%;
+  letter-spacing: 0px;
+  font-size: var(--font-size-sm);
+}
+
 .young-serif-regular {
   font-family: "Young Serif", serif;
   font-weight: 400;
@@ -26,6 +100,17 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+.flex-24 {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.flex-16 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .outfit-semibold {
@@ -63,31 +148,6 @@ main {
   border-radius: 24px;
 }
 
-h1,
-h2 {
-  font-family: "Young Serif", serif;
-  font-weight: 400;
-  font-style: normal;
-  color: var(--brown-800);
-}
-
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 28px;
-  color: var(--brown-800);
-}
-
-p,
-ul,
-li {
-  font-family: "Outfit", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
 .mobile {
   display: none;
 }
@@ -110,18 +170,25 @@ li {
   padding: 0;
 }
 
-.section ul,
-.section ol {
+ul,
+ol {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding-left: 16px; /* This aligns the markers with the container */
+  padding-left: 20px; /* This aligns the markers with the container */
 }
 
 ul li,
 ol li {
   font-size: 16px;
   color: var(--stone-600);
+  padding-left: 20px;
+}
+ul li::marker,
+ol li::marker {
+  color: var(--rose-800);
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .section .outfit-bold {
@@ -129,23 +196,7 @@ ol li {
   color: var(--stone-900);
   margin: 32px 0;
 }
-.preparation {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-four);
-  background-color: var(--rose-50);
-  padding: 24px;
-}
-.preparation h3 {
-  font-size: 20px;
-  color: var(--rose-800);
-}
 
-.preparation ul {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
 .nutrition {
   display: flex;
   flex-direction: column;
@@ -155,7 +206,6 @@ ol li {
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 12px;
 }
 .nutrition-item {
   display: flex;
@@ -163,12 +213,16 @@ ol li {
   padding: 16px 32px;
   border-bottom: var(--stone-150) dotted 1px;
 }
+.no-border {
+  border-bottom: none;
+}
 .nutrition-item p {
   display: block;
   width: 100%;
 }
 .nutrition-item p:last-child {
   font-weight: bold;
+  color: var(--brown-800);
 }
 
 @media screen and (max-width: 768px) {
@@ -201,7 +255,7 @@ ol li {
 .attribution {
   position: absolute;
   right: 3%;
-  bottom: 3%;
+  bottom: 20px;
   font-size: 11px;
   text-align: center;
 }
